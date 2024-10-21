@@ -108,17 +108,17 @@ if __name__ == '__main__':
 
             elif "open notepad" in query:
                 speak("Opening Notepad for you sir")
-                notepad_path = "C:\\Users\\ASUS\\AppData\\Local\\Microsoft\\WindowsApps\\notepad.exe"
+                notepad_path = "C:\\Windows\\notepad.exe"
                 os.startfile(notepad_path)
 
-            elif "open discord" in query:
-                speak("Opening Discord for you sir")
-                discord_path = "C:\\Users\\ASUS\\AppData\\Local\\Discord\\app-1.0.9028\\Discord.exe"
-                os.startfile(discord_path)
+            # elif "open discord" in query:
+            #     speak("Opening Discord for you sir")
+            #     discord_path = "C:\\Users\\ASUS\\AppData\\Local\\Discord\\app-1.0.9028\\Discord.exe"
+            #     os.startfile(discord_path)
 
             elif "open vs code" in query:
                 speak("Opening VS code for you sir")
-                gta_path = "C:\Users\DELL\OneDrive\Desktop\Visual Studio Code.lnk"
+                gta_path = "C:\\Users\\DELL\\OneDrive\\Desktop\\Visual Studio Code.lnk"
                 os.startfile(gta_path)
 
             elif 'ip address' in query:
