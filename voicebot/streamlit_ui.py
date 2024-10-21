@@ -7,45 +7,69 @@ def listen_for_commands():
     query = take_command().lower()  # Call your existing function
     return query
 
-# UI Layout
-st.set_page_config(page_title="Voice Assistant Control", page_icon="🎤", layout="wide")
+# Sidebar for navigation
+st.sidebar.title("Navigation")
+options = st.sidebar.radio("Choose an option:", ["Home", "Listening", "About"])
 
-# Sidebar for options
-st.sidebar.header("Voice Assistant Options")
-st.sidebar.markdown("### Control the voice assistant:")
-st.sidebar.write("Use the buttons below to start or stop the voice assistant.")
+if options == "Home":
+    st.title("Welcome to the Voice Assistant Control App!")
+    st.write("""
+    This app allows you to control various tasks using voice commands.
+    Feel free to explore the different sections to learn more about the capabilities of your voice assistant.
+    """)
 
-# Button to trigger listening
-start_button = st.sidebar.button("Start Listening")
-stop_button = st.sidebar.button("Stop Listening")
+    # Adding an image to the Home section
+    st.image("voicebot\images.png", caption="Voice Assistant Home", use_column_width=400)
 
-# State to control listening process
-if 'listening' not in st.session_state:
-    st.session_state.listening = False
+elif options == "Listening":
+    # UI Layout for Listening
+    st.title("Voice Assistant Control")
+    
+    start_button = st.button("🎤 Start Listening")
+    stop_button = st.button("🛑 Stop Listening")
 
-# Main content area
-st.title("Voice Assistant Control")
-st.image("voicebot\images.jpeg", width=400)  # Replace with a relevant image URL
+    # State to control listening process
+    if 'listening' not in st.session_state:
+        st.session_state.listening = False
 
-# Check if "Start Listening" button is clicked
-if start_button:
-    st.session_state.listening = True
-    st.success("Voice Assistant is now listening...")
-    while st.session_state.listening:
-        query = listen_for_commands()
-        if query:
-            st.write(f"Command recognized: **{query}**")
-            # Optional: Add response for recognized commands
-            if "how are you" in query:
-                speak("I am absolutely fine. What about you?")
-                st.write("Response: I am absolutely fine. What about you?")
-            # Add more command responses here as needed
+    # Status Indicator
+    if st.session_state.listening:
+        st.success("Voice Assistant is Listening...")
+    else:
+        st.warning("Voice Assistant is Not Listening.")
 
-# Check if "Stop Listening" button is clicked
-if stop_button:
-    st.session_state.listening = False
-    st.success("Voice Assistant has stopped listening.")
+    # Check if "Start Listening" button is clicked
+    if start_button:
+        st.session_state.listening = True
+        st.write("Voice Assistant is listening...")
+        while st.session_state.listening:
+            query = listen_for_commands()
+            if query:
+                st.write(f"Command recognized: {query}")
 
-# Footer
-st.markdown("---")
-st.write("Developed by Parth Dhabalia | Voice Assistant Project")
+    # Check if "Stop Listening" button is clicked
+    if stop_button:
+        st.session_state.listening = False
+        st.write("Voice Assistant has stopped listening.")
+
+elif options == "About":
+    st.title("About This Project")
+    st.write("""
+    This application serves as a voice assistant for various tasks, 
+    leveraging speech recognition technology to execute user commands.
+    
+    ### Features:
+    - Voice Recognition
+    - Task Automation
+    - Customizable Commands
+
+    ### Why Use Our Voice Assistant?
+    Our voice assistant is designed to simplify your daily tasks 
+    and enhance your productivity by allowing you to interact with your devices using voice commands.
+    """)
+
+    # Adding an image to the About section
+    st.image("voicebot\images.jpeg", caption="About Voice Assistant", use_column_width=500)
+
+if __name__ == "__main__":
+    st.write("Please select an option from the sidebar.")
