@@ -1,7 +1,7 @@
 
 # Voice Assistant Project
 
-This is a Python-based voice assistant project that integrates various functionalities such as web search, email sending, playing YouTube videos, fetching weather reports, and more. The project can be run locally or inside a Docker container for portability.
+This is a Python-based voice assistant project that integrates various functionalities such as web search, email sending, playing YouTube videos, fetching weather reports, and more. The project can be run locally, inside a Docker container, or through a **Streamlit** web app for an interactive UI experience.
 
 ## Features
 
@@ -18,6 +18,10 @@ This is a Python-based voice assistant project that integrates various functiona
   - News reading
   - IMDb movie information
   - Basic calculations using WolframAlpha API
+- **Streamlit Web Interface**:
+  - Home, Listening, and About sections
+  - UI buttons to start and stop listening to voice commands
+  - Visual feedback of the assistant’s status
 - **Custom Hotkeys**:
   - Start listening: `Ctrl + Alt + K`
   - Stop listening: `Ctrl + Alt + P`
@@ -28,6 +32,7 @@ This is a Python-based voice assistant project that integrates various functiona
 - **Libraries**:
   - `pyttsx3`: Text-to-speech conversion
   - `SpeechRecognition`: Recognize speech input
+  - `Streamlit`: Web interface for the assistant
   - `keyboard`: Detect key presses for hotkeys
   - `requests`: HTTP requests
   - `pyautogui`: Automating the mouse and keyboard
@@ -62,6 +67,21 @@ This is a Python-based voice assistant project that integrates various functiona
    python main.py
    ```
 
+### Running with Streamlit
+
+To use the Streamlit-based UI, follow these steps:
+
+1. Run the Streamlit app:
+   ```bash
+   streamlit run app.py
+   ```
+2. Open the provided local URL to access the Streamlit web interface.
+
+In the Streamlit app, you can:
+- Navigate through **Home**, **Listening**, and **About** sections.
+- Start and stop listening using UI buttons.
+- Receive visual feedback on the assistant’s listening status.
+
 ### Running with Docker
 
 1. Install Docker (if not installed already). You can use **Docker Desktop** for Windows and macOS or follow the instructions for Linux.
@@ -85,7 +105,8 @@ If you prefer using VS Code's Docker extension:
 ## Project Structure
 
 ```
-├── main.py               # Main entry point for the project
+├── app.py                # Streamlit app entry point
+├── main.py               # Main entry point for the voice assistant
 ├── const.py              # Contains constants and utility text
 ├── requirements.txt      # Python dependencies
 ├── Dockerfile            # Dockerfile for containerizing the project
@@ -95,7 +116,7 @@ If you prefer using VS Code's Docker extension:
 ## Usage
 
 - **Start the Assistant**: The voice assistant will greet you and ask for commands.
-- **Stop Listening**: Use the hotkey `Ctrl + Alt + P` to stop the assistant from listening.
+- **Stop Listening**: Use the hotkey `Ctrl + Alt + P` or the Stop button in the Streamlit app.
 - **Supported Commands**:
   - "Open Google"
   - "Open YouTube"

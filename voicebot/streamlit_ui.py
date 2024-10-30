@@ -194,7 +194,7 @@ elif options == "About":
     """)
 
     # Adding an image to the About section
-    st.image("C:\\Users\\DELL\\OneDrive\\Desktop\\VOICE_BOT\\voicebot\\0-banner-image.png", caption="About Voice Assistant", use_column_width=500)
+    st.image("C:\\Users\\DELL\\OneDrive\\Desktop\\VOICE_BOT\\voicebot\\0-banner-image.png", caption="About Voice Assistant", use_column_width=300)
 
 if __name__ == "__main__":
     st.write("Please select an option from the sidebar.")
