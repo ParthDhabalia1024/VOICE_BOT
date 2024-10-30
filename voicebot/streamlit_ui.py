@@ -90,7 +90,7 @@ st.sidebar.title("Navigation")
 options = st.sidebar.radio("Choose an option:", ["Home", "Listening", "About"])
 
 if options == "Home":
-    st.title("Welcome to the Voice Assistant Control App!")
+    st.title("Hello Parth ....Welcome to the Voice Assistant Control App!")
     st.write("""
     This app allows you to control various tasks using voice commands.
     Feel free to explore the different sections to learn more about the capabilities of your voice assistant.
