@@ -71,11 +71,12 @@ This is a Python-based voice assistant project that integrates various functiona
 
 To use the Streamlit-based UI, follow these steps:
 
-1. Run the Streamlit app:
+1.Go to the specified directory where you have the porject
+2. Run the Streamlit app:
    ```bash
-   streamlit run app.py
+   streamlit run main.py
    ```
-2. Open the provided local URL to access the Streamlit web interface.
+3. Open the provided local URL to access the Streamlit web interface.
 
 In the Streamlit app, you can:
 - Navigate through **Home**, **Listening**, and **About** sections.
