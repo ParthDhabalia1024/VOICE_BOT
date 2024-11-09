@@ -77,7 +77,7 @@
 
 
 import streamlit as st
-from main import USER, greet_me, take_command, speak, os, sp, imdb, wolframalpha, webbrowser, pyautogui, find_my_ip, search_on_google, search_on_wikipedia, youtube, send_email, get_news, weather_forecast
+from main import USER, greet_me, take_command, speak, os, sp, imdb, wolframalpha, webbrowser, find_my_ip, search_on_google, search_on_wikipedia, youtube, send_email, get_news, weather_forecast
 
 # Function to start listening for commands
 def listen_for_commands():
