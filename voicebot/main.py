@@ -261,7 +261,13 @@
 
 
 
+import os
 
+# Conditionally import pyautogui only if a display is available
+if 'DISPLAY' in os.environ:
+    import pyautogui
+else:
+    print("Running in headless mode; pyautogui not available.")
 import pyttsx3
 import requests
 import speech_recognition as sr
@@ -270,7 +276,7 @@ import os
 import subprocess as sp
 import imdb
 import wolframalpha
-import pyautogui
+
 import webbrowser
 import time
 
@@ -279,6 +285,7 @@ from decouple import config
 from random import choice
 from const import random_text
 from online import find_my_ip, search_on_google, search_on_wikipedia, youtube, send_email, get_news, weather_forecast
+
 
 # Initialize the pyttsx3 engine once globally
 engine = pyttsx3.init()
