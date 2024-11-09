@@ -266,6 +266,7 @@ import os
 # Conditionally import pyautogui only if a display is available
 if 'DISPLAY' in os.environ:
     import pyautogui
+    import pywhatkit
 else:
     print("Running in headless mode; pyautogui not available.")
 import pyttsx3
